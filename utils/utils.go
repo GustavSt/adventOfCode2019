@@ -6,6 +6,7 @@ import (
 	"log"
 	"path"
 	"runtime"
+	"strconv"
 	"strings"
 )
 
@@ -33,6 +34,30 @@ func SplitData(day int, dataFile string) ([]string, error) {
 	}
 	strs := strings.Split(string(data), "\r\n")
 	return strs, nil
+}
+
+//SplitOnChar splits input data on specified rune
+func SplitOnChar(day int, dataFile string, split string) ([]string, error) {
+	data, err := GetData(day, dataFile)
+	if err != nil {
+		log.Fatal(err)
+		return nil, err
+	}
+	strs := strings.Split(string(data), split)
+	return strs, nil
+}
+
+//ConvertToInt converts slice of strings to slice of ints
+func ConvertToInt(arr []string) []int {
+	intArr := []int{}
+	for _, i := range arr {
+		j, err := strconv.Atoi(i)
+		if err != nil {
+			panic(err)
+		}
+		intArr = append(intArr, j)
+	}
+	return intArr
 }
 
 // Max returns the larger of x or y.
