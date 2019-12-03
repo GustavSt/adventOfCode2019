@@ -10,6 +10,12 @@ import (
 	"strings"
 )
 
+//Vector2 a vector2
+type Vector2 struct {
+	X int
+	Y int
+}
+
 //GetData ads
 func GetData(day int, dataFile string) ([]byte, error) {
 	_, filename, _, ok := runtime.Caller(1)
@@ -58,6 +64,14 @@ func ConvertToInt(arr []string) []int {
 		intArr = append(intArr, j)
 	}
 	return intArr
+}
+
+// Abs returns the absolute value of x.
+func Abs(x int) int {
+	if x < 0 {
+		return -x
+	}
+	return x
 }
 
 // Max returns the larger of x or y.
