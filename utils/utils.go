@@ -8,6 +8,7 @@ import (
 	"runtime"
 	"strconv"
 	"strings"
+	"unicode"
 )
 
 //Vector2 a vector2
@@ -64,6 +65,14 @@ func ConvertToInt(arr []string) []int {
 		intArr = append(intArr, j)
 	}
 	return intArr
+}
+
+//RuneToInt converts rune to int
+func RuneToInt(r rune) int {
+	if !unicode.IsDigit(r) {
+		panic("rune is not digit")
+	}
+	return int(r - '0')
 }
 
 // Abs returns the absolute value of x.
