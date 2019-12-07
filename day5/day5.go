@@ -13,7 +13,7 @@ func main() {
 	fmt.Println("task 1 finished in: ", time.Since(start))
 
 	start = time.Now()
-	task2 := Task2("data1.txt")
+	task2 := Task2("data1.txt", 5)
 	fmt.Printf("task2: %d \n", task2)
 	fmt.Println("task 2 finished in: ", time.Since(start))
 	fmt.Println("-----------------------------")
@@ -25,7 +25,7 @@ func main() {
 	fmt.Println("task 1 finished in: ", time.Since(start))
 
 	start = time.Now()
-	task2data2 := Task2("data2.txt")
+	task2data2 := Task2("data2.txt", 5)
 	fmt.Printf("task2: %d \n", task2data2)
 	fmt.Println("task 2 finished in: ", time.Since(start))
 	fmt.Println("-----------------------------")
