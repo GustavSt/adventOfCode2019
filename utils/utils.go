@@ -67,6 +67,15 @@ func ConvertToInt(arr []string) []int {
 	return intArr
 }
 
+//ConvertToIntArr c
+func ConvertToIntArr(data string) []int {
+	res := []int{}
+	for _, s := range data {
+		res = append(res, RuneToInt(s))
+	}
+	return res
+}
+
 //RuneToInt converts rune to int
 func RuneToInt(r rune) int {
 	if !unicode.IsDigit(r) {
@@ -97,4 +106,11 @@ func Min(x, y int) int {
 		return y
 	}
 	return x
+}
+
+//GetMaxInt returns maxint
+func GetMaxInt() int {
+	const MaxUint = ^uint(0)
+	const MaxInt = int(MaxUint >> 1)
+	return MaxInt
 }
