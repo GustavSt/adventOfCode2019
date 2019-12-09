@@ -37,10 +37,3 @@ func TestTask1Third(t *testing.T) {
 		t.Errorf("Task third was %d, expected %d", res[0], expected)
 	}
 }
-func TestTask2(t *testing.T) {
-	res := Task2("testData.txt")
-	expected := 4
-	if res != expected {
-		t.Errorf("Task2 was %d, expected %d", res, expected)
-	}
-}
