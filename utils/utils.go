@@ -67,6 +67,19 @@ func ConvertToInt(arr []string) []int {
 	return intArr
 }
 
+//ConvertToInt64 converts slice of strings to slice of ints
+func ConvertToInt64(arr []string) []int64 {
+	intArr := []int64{}
+	for _, i := range arr {
+		j, err := strconv.ParseInt(i, 10, 64)
+		if err != nil {
+			panic(err)
+		}
+		intArr = append(intArr, j)
+	}
+	return intArr
+}
+
 //ConvertToIntArr c
 func ConvertToIntArr(data string) []int {
 	res := []int{}
